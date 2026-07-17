@@ -1,29 +1,52 @@
 # Enterprise AI Engineering Playbook
 
-A comprehensive guide and reference architecture for building production-grade AI systems using LLMs, RAG, and Agentic workflows.
+A practical, leadership-oriented repository for understanding how to design, build, secure, and operate enterprise AI systems. This playbook focuses on production readiness rather than toy demos.
 
-## 🏗 Architecture
+## What this repository covers
+- AI SDLC and delivery practices
+- MCP examples for tool integration
+- RAG and retrieval architecture
+- Agent orchestration patterns
+- Security, governance, and responsible AI
+- Architecture diagrams and sample prompts
 
-### RAG Pipeline
+## Repository structure
+- `docs/` – architecture, roadmap, and reference documentation
+- `examples/` – runnable examples and starter code
+- `prompts/` – reusable prompts for analysis and implementation
+- `AI_SDLC.md` – lifecycle guidance for AI systems
+- `MCP_GUIDE.md` – Model Context Protocol overview and examples
+- `SECURITY.md` – enterprise security and governance guidance
+
+## Architecture snapshot
+
 ```mermaid
-graph LR
-    A[Data Sources] --> B[Ingestion Engine]
-    B --> C[Vector Database]
-    D[User Query] --> E[Query Orchestrator]
-    E --> C
-    C --> E
-    E --> F[LLM / Reasoning]
-    F --> G[Response Generation]
+flowchart LR
+    User[User or Employee] --> Gateway[App / API Layer]
+    Gateway --> Orchestrator[Agent Orchestrator]
+    Orchestrator --> Retriever[RAG Retriever]
+    Retriever --> VectorDB[(Vector DB)]
+    Orchestrator --> Model[Foundation Model]
+    Model --> Response[Grounded Answer]
+    Response --> Gateway
 ```
 
-## 🛠 Features
-- **AI SDLC**: Best practices for versioning models and data.
-- **MCP Examples**: Model Context Protocol implementations for tool integration.
-- **Agent Orchestration**: Multi-agent patterns for complex task solving.
-- **Security**: Prompt injection mitigation and PII masking.
+## Documentation
+- [Architecture overview](docs/architecture.md)
+- [Roadmap](docs/roadmap.md)
+- [AI SDLC](AI_SDLC.md)
+- [MCP guide](MCP_GUIDE.md)
+- [Security guide](SECURITY.md)
 
-## 🚀 Setup Guide
-1. Clone the repo.
-2. Run `pip install -r requirements.txt`.
-3. Configure your `.env` with API keys.
+## Setup
+1. Clone the repository.
+2. Review the documentation in `docs/`.
+3. Run the example scripts in `examples/`.
+4. Adapt the sample prompts in `prompts/` for your use case.
+
+## Roadmap
+See [docs/roadmap.md](docs/roadmap.md) for planned additions.
+
+## Why this matters
+This repository is designed to communicate a senior-level perspective: enterprise AI is not just about model calls, but about reliable delivery, governance, and operational maturity.
 
