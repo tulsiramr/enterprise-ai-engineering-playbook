@@ -27,5 +27,3 @@ graph LR
 2. Run `pip install -r requirements.txt`.
 3. Configure your `.env` with API keys.
 
-## 📜 License
-MIT
